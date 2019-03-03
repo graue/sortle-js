@@ -172,12 +172,22 @@ function evaluate(terms, expressions, ip) {
           .reverse()
           .concat(expressions.slice(ip + 1).reverse());
 
-      stack.push(
-        evalRegex(
+      let regexResult;
+      try {
+        regexResult = evalRegex(
           sortleString(op2),
           expressionsToMatch.map(([name, terms]) => name),
-        ),
-      );
+        );
+      } catch (e) {
+        if (e instanceof SortleRegexError) {
+          console.error(`error: ${e.message}`);
+          console.error(`when evaluating regex: ${e.regex}`);
+          process.exit(1);
+        } else {
+          throw e;
+        }
+      }
+      stack.push(regexResult);
     } else {
       throw new Error(`internal error: unimplemented operator ${term.value}`);
     }
@@ -185,7 +195,7 @@ function evaluate(terms, expressions, ip) {
 
   if (stack.length !== 1) {
     console.error(
-      'stack must end with exactly 1 value, ' +
+      'error: stack must end with exactly 1 value, ' +
       `but ended with ${stack.length}`
     );
     process.exit(1);
