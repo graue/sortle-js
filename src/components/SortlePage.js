@@ -126,6 +126,18 @@ export default class SortlePage extends React.Component {
     this.setState({running: false});
   };
 
+  handleResetClick = (e) => {
+    e.preventDefault();
+    this.setState({
+      running: false,
+      runningCode: '',
+      runResult: null,
+      runError: null,
+      runIP: 0,
+      runState: [],
+    });
+  };
+
   handleStepClick = (e) => {
     e.preventDefault();
     this.parseAndExecuteCode(1);
@@ -280,6 +292,12 @@ export default class SortlePage extends React.Component {
             onClick={this.handleStepClick}
           >
             Step
+          </button>
+          <button
+            disabled={running || !(runResult || runError || paused)}
+            onClick={this.handleResetClick}
+          >
+            Reset
           </button>
         </div>
       </div>
