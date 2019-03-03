@@ -2,7 +2,7 @@ module.exports = {
   cache: true,
   entry: './src/main',
   output: {
-    filename: './bundle/sortle-web.js'
+    filename: './web/sortle-web.js'
   },
   module: {
     loaders: [
