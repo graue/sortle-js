@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 const {readFileSync} = require('fs');
-const {SortleSyntaxError, parseSortleProgram} = require('./parse');
-const {SortleRegexError, evalRegex} = require('./regex');
+const {SortleSyntaxError, parseSortleProgram} = require('./lib/parse');
+const {SortleRegexError, evalRegex} = require('./lib/regex');
 
 main(process.argv);
 
