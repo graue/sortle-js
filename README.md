@@ -2,7 +2,7 @@
 
 ## A programming language based on insertion sort
 
-![A Sortle example program (Fibonacci number calculator) being debugged.](https://raw.githubusercontent.com/graue/sortle-js/master/doc/screenshot.png)
+![A Sortle example program (Fibonacci number calculator) being debugged.](doc/screenshot.png)
 
 [Sortle](https://esolangs.org/wiki/Sortle) is an esoteric programming language
 based on string rewriting, insertion sort and regexes. This repo contains a
