@@ -1,3 +1,7 @@
+# [This project has moved to Codeberg](https://codeberg.org/graue/sortle-js)
+
+[Go there for updates](https://codeberg.org/graue/sortle-js)
+
 # Sortle
 
 ## A programming language based on insertion sort
